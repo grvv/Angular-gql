@@ -1,0 +1,23 @@
+<p>countries works!</p>
+<app-count></app-count>
+
+<!-- <div>{{ countries$ | async | json }}</div> -->
+
+<div class="row justify-content-center">
+  <div
+    *ngFor="let country of countries$ | async"
+    class="card col-3 m-2"
+    style="width: 18rem"
+  >
+    <div style="font-size: 100px; margin: 0 auto">{{ country.emoji }}</div>
+
+    <div class="card-body">
+      <h5 class="card-title">{{ country.name }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ country.capital }}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">{{ country.phone }}</h6>
+      <a [routerLink]="['/country', country.code]" class="btn btn-primary"
+        >More Details</a
+      >
+    </div>
+  </div>
+</div>
